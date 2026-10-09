@@ -18,6 +18,32 @@ button,input{font:inherit}button{cursor:pointer}a{color:inherit}.wrap{width:min(
 .lower-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:48px 0}.panel{border:1px solid var(--line);background:#0d2019c9;border-radius:21px;padding:22px}.panel h2{font-size:22px;margin:0 0 4px;letter-spacing:-.03em}.panel .sub{font-size:13px;color:var(--muted);margin:0 0 18px}.name-row{display:flex;gap:8px}.name-row input{min-width:0;flex:1;background:#07130f;border:1px solid var(--line);border-radius:11px;padding:11px 12px;color:var(--text);outline:none}.name-row input:focus{border-color:var(--green)}.score-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid #234332}.rank{width:30px;height:30px;border-radius:9px;background:#183526;display:grid;place-items:center;font-weight:900;color:var(--green)}.score-row .who{flex:1;font-weight:800}.score-row small{display:block;color:var(--muted);font-size:11px}.score{font-weight:950;color:var(--green)}.empty{color:var(--muted);font-size:13px;padding:16px 0}.notice{font-size:12px;color:var(--muted);padding:11px 12px;border:1px dashed #31523c;border-radius:12px;margin-top:13px}
 footer{border-top:1px solid var(--line);padding:25px 0 36px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.footer-brand{font-weight:950;letter-spacing:.08em;color:var(--text)}
 .modal{position:fixed;inset:0;z-index:30;background:#020805d9;backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:16px}.modal.open{display:flex}.game-window{width:min(700px,100%);max-height:min(88vh,850px);overflow:auto;border:1px solid #386047;border-radius:24px;background:linear-gradient(145deg,#10251a,#08150f);box-shadow:0 30px 100px #0009}.modal-head{position:sticky;top:0;background:#0d2019f2;backdrop-filter:blur(12px);padding:18px 22px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);z-index:2}.modal-title{display:flex;align-items:center;gap:12px}.modal-title .game-icon{width:40px;height:40px}.modal-title h2{font-size:18px;margin:0}.close{border:1px solid var(--line);border-radius:10px;background:transparent;color:var(--text);width:37px;height:37px;font-size:22px}.game-body{padding:24px}.game-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;font-weight:800;margin-bottom:13px}.progress{height:6px;background:#1a3325;border-radius:99px;overflow:hidden;margin-bottom:23px}.progress span{display:block;height:100%;background:var(--green);width:0;transition:width .2s}.question{font-size:clamp(22px,4vw,31px);line-height:1.2;letter-spacing:-.04em;margin:0 0 20px}.question-hint{color:var(--muted);font-size:13px;margin-top:-10px;margin-bottom:18px}.answers{display:grid;grid-template-columns:1fr 1fr;gap:10px}.answer{padding:14px 15px;text-align:left;background:#10251a;border:1px solid #2a4a35;border-radius:13px;color:var(--text);font-weight:800;min-height:56px}.answer:hover:not(:disabled){border-color:var(--green);background:#183525}.answer.correct{border-color:var(--green);background:#1c4024;color:#d6ffac}.answer.wrong{border-color:var(--red);background:#3a2020}.answer:disabled{cursor:default}.feedback{min-height:25px;font-weight:800;margin:15px 0 8px}.feedback.good{color:var(--green)}.feedback.bad{color:var(--red)}.game-controls{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:18px}.result{text-align:center;padding:18px 8px 8px}.result-emoji{font-size:62px}.result h2{font-size:32px;letter-spacing:-.04em;margin:8px 0}.result p{color:var(--muted)}.result-score{font-size:48px;font-weight:1000;color:var(--green);letter-spacing:-.06em}.result-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+
+/* Enhanced Penalty Stage */
+.penalty-stage{position:relative;width:100%;height:220px;background:linear-gradient(to bottom, #113821, #0a2114);border:2px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:15px;display:flex;align-items:center;justify-content:center}
+.penalty-goal{position:absolute;top:20px;width:70%;height:100px;border:4px solid #fff;border-bottom:0;background:radial-gradient(circle, #ffffff15 1px, transparent 1px) 0 0/10px 10px}
+.penalty-keeper{position:absolute;top:60px;left:calc(50% - 20px);font-size:36px;transition:all 0.5s ease;z-index:2}
+.penalty-ball{position:absolute;bottom:20px;left:calc(50% - 15px);font-size:30px;transition:all 0.5s cubic-bezier(0.25, 1, 0.5, 1);z-index:3}
+.shot-target-grid{position:absolute;top:20px;width:70%;height:100px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;z-index:4}
+.shot-target-btn{background:transparent;border:1px dashed #ffffff44;cursor:pointer;transition:background 0.2s}
+.shot-target-btn:hover{background:#b8ff4533;border-color:var(--green)}
+
+/* Transfer Matching UI */
+.transfer-container{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:15px}
+.transfer-card{background:#122b22;border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center;cursor:pointer;transition:all 0.2s}
+.transfer-card.selected{border-color:var(--green);box-shadow:0 0 12px #b8ff4540;background:#1a3c2f}
+.transfer-card.matched{border-color:var(--green2);opacity:0.4;cursor:default}
+
+/* Tactical Pitch UI */
+.tactical-pitch{position:relative;width:100%;height:200px;background:#153d27;border:2px solid #2a5a3c;border-radius:12px;margin-bottom:15px;display:flex;flex-direction:column;justify-content:space-around;padding:10px}
+.tactical-row{display:flex;justify-content:space-around;align-items:center}
+.tactical-node{width:36px;height:36px;border-radius:50%;background:var(--panel2);border:2px solid var(--green);display:grid;place-items:center;font-weight:900;font-size:12px;color:var(--green);cursor:pointer;transition:all 0.2s}
+.tactical-node.active{background:var(--green);color:#000;transform:scale(1.15)}
+
+/* Speed Timer Bar */
+.timer-bar{height:6px;background:var(--red);width:100%;transition:width 0.1s linear;border-radius:99px;margin-bottom:10px}
+.streak-badge{display:inline-block;padding:2px 8px;border-radius:12px;background:var(--gold);color:#000;font-weight:900;font-size:11px;margin-left:8px}
+
 @media(max-width:850px){.hero{grid-template-columns:1fr}.stadium{min-height:220px}.games{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.wrap{width:min(100% - 22px,1160px)}.nav{height:62px}.brand{font-size:13px}.profile-chip{display:none}.hero{padding-top:34px}.hero p{font-size:15px}.games{grid-template-columns:1fr}.game-card{min-height:165px}.lower-grid{grid-template-columns:1fr;margin-top:30px}.section-head h2{font-size:24px}.answers{grid-template-columns:1fr}.game-body{padding:18px}.modal-head{padding:14px 16px}}
 </style>
@@ -29,15 +55,15 @@ footer{border-top:1px solid var(--line);padding:25px 0 36px;color:var(--muted);f
 </div></header>
 <main class="wrap">
 <section class="hero">
- <div><div class="eyebrow"><span class="pulse"></span><span data-i18n="eyebrow">THE ULTIMATE FOOTBALL QUIZ ARENA</span></div>
- <h1 data-i18n-html="heroTitle">YOUR FOOTBALL<br><em>UNIVERSE.</em></h1>
+ <div><div class="eyebrow"><span class="pulse"></span><span data-i18n="eyebrow">ĐẤU TRƯỜNG TRẮC NGHIỆM BÓNG ĐÁ</span></div>
+ <h1 data-i18n-html="heroTitle">VŨ TRỤ BÓNG ĐÁ<br><em>CỦA BẠN.</em></h1>
  <p data-i18n="heroDesc">Kiểm tra kiến thức bóng đá, thử thách phản xạ và chinh phục 15 mini game từ những huyền thoại đến các sân cỏ hiện đại.</p>
  <div class="hero-actions"><button class="primary-btn" id="startBtn" data-i18n="start">⚡ Chơi ngay</button><button class="secondary-btn" id="scrollGames" data-i18n="explore">Khám phá mini game ↓</button></div>
  </div>
  <div class="stadium"><div class="ball">⚽</div><div class="stadium-tag"><span>EST. <strong>2026</strong></span><span>KNOW THE GAME. <strong>OWN THE GAME.</strong></span></div></div>
 </section>
 <section class="stats">
- <div class="stat"><b>15</b><span data-i18n="statGames">MINI GAMES</span></div>
+ <div class="stat"><b>15</b><span data-i18n="statGames">MINI GAME</span></div>
  <div class="stat"><b id="playedStat">0</b><span data-i18n="statPlayed">LƯỢT ĐÃ CHƠI</span></div>
  <div class="stat"><b id="bestStat">0</b><span data-i18n="statBest">ĐIỂM CAO NHẤT</span></div>
  <div class="stat"><b>VI / EN</b><span data-i18n="statLang">SONG NGỮ</span></div>
@@ -64,8 +90,8 @@ footer{border-top:1px solid var(--line);padding:25px 0 36px;color:var(--muted);f
 </div></div>
 <script>
 const I18N={
-vi:{eyebrow:"ĐẤU TRƯỜNG TRẮC NGHIỆM BÓNG ĐÁ",heroTitle:'VŨ TRỤ BÓNG ĐÁ<br><em>CỦA BẠN.</em>',heroDesc:"Kiểm tra kiến thức bóng đá, thử thách phản xạ và chinh phục 15 mini game từ những huyền thoại đến các sân cỏ hiện đại.",start:"⚡ Chơi ngay",explore:"Khám phá mini game ↓",statGames:"MINI GAME",statPlayed:"LƯỢT ĐÃ CHƠI",statBest:"ĐIỂM CAO NHẤT",statLang:"SONG NGỮ",gamesTitle:"Chọn thử thách của bạn",gamesSub:"Mỗi trận đấu là một cơ hội để ghi điểm.",all:"Tất cả · 15",knowledge:"Kiến thức",challenge:"Thử thách",clubs:"CLB & giải đấu",leaderTitle:"🏆 Bảng thành tích",leaderSub:"Điểm được lưu trên trình duyệt hiện tại.",leaderNote:"Bản GitHub Pages dùng lưu trữ cục bộ (localStorage), không đồng bộ điểm giữa các thiết bị.",profileTitle:"⚙️ Hồ sơ người chơi",profileSub:"Đặt tên để bảng thành tích hiển thị đúng phong cách của bạn.",nameLabel:"Tên người chơi",save:"Lưu",privacy:"Không cần đăng ký tài khoản. Dữ liệu điểm và tên chỉ lưu trên trình duyệt của em.",footerText:"— Học bóng đá bằng cách chơi.",play:"CHƠI NGAY",points:"điểm",question:"CÂU",of:"/",next:"Câu tiếp theo →",finish:"Xem kết quả",correct:"Chính xác! +100 điểm",wrong:"Chưa đúng!",hint:"Chọn đáp án mà em cho là đúng.",time:"Thử thách kiến thức",result:"Kết quả trận đấu",again:"Chơi lại",back:"Về danh sách",nameSaved:"Đã lưu tên người chơi!",noScores:"Chưa có điểm nào. Chọn một mini game để bắt đầu nhé!",resultLine:"Em đã hoàn thành thử thách.",best:"Kỷ lục mới!",already:"Lưu ý: đây là bản demo chạy trên trình duyệt.",true:"Đúng",false:"Sai",penaltyHint:"Chọn góc sút để thực hiện quả penalty!",penaltyGoal:"VÀO!!! Em đánh bại thủ môn!",penaltySave:"Thủ môn cản phá! Thử lại nhé.",marketHint:"Chọn cầu thủ phù hợp với mô tả.",oddHint:"Chọn phương án KHÔNG cùng nhóm.",dailyHint:"Thử thách hôm nay: trả lời đúng càng nhiều càng tốt."},
-en:{eyebrow:"THE ULTIMATE FOOTBALL QUIZ ARENA",heroTitle:'YOUR FOOTBALL<br><em>UNIVERSE.</em>',heroDesc:"Test your football knowledge, challenge your instincts and conquer 15 mini games, from legendary players to modern stadiums.",start:"⚡ Play now",explore:"Explore mini games ↓",statGames:"MINI GAMES",statPlayed:"GAMES PLAYED",statBest:"PERSONAL BEST",statLang:"BILINGUAL",gamesTitle:"Choose your challenge",gamesSub:"Every match is a chance to score.",all:"All games · 15",knowledge:"Knowledge",challenge:"Challenges",clubs:"Clubs & leagues",leaderTitle:"🏆 Leaderboard",leaderSub:"Scores are saved in this browser.",leaderNote:"The GitHub Pages version uses localStorage; scores are not shared across devices.",profileTitle:"⚙️ Player profile",profileSub:"Choose a name for your local leaderboard.",nameLabel:"Player name",save:"Save",privacy:"No account required. Your name and scores stay in this browser.",footerText:"— Learn football by playing.",play:"PLAY NOW",points:"pts",question:"QUESTION",of:"/",next:"Next question →",finish:"View results",correct:"Correct! +100 points",wrong:"Not quite!",hint:"Choose the answer you think is correct.",time:"Knowledge challenge",result:"Match results",again:"Play again",back:"Back to games",nameSaved:"Player name saved!",noScores:"No scores yet. Choose a mini game to get started!",resultLine:"You completed the challenge.",best:"New personal best!",already:"Note: this is a browser-based demo.",true:"True",false:"False",penaltyHint:"Pick a corner to take the penalty!",penaltyGoal:"GOAL!!! You beat the keeper!",penaltySave:"Saved by the keeper! Try again.",marketHint:"Pick the player that matches the clue.",oddHint:"Pick the option that does NOT belong.",dailyHint:"Daily challenge: answer as many as you can."}
+vi:{eyebrow:"ĐẤU TRƯỜNG TRẮC NGHIỆM BÓNG ĐÁ",heroTitle:'VŨ TRỤ BÓNG ĐÁ<br><em>CỦA BẠN.</em>',heroDesc:"Kiểm tra kiến thức bóng đá, thử thách phản xạ và chinh phục 15 mini game từ những huyền thoại đến các sân cỏ hiện đại.",start:"⚡ Chơi ngay",explore:"Khám phá mini game ↓",statGames:"MINI GAME",statPlayed:"LƯỢT ĐÃ CHƠI",statBest:"ĐIỂM CAO NHẤT",statLang:"SONG NGỮ",gamesTitle:"Chọn thử thách của bạn",gamesSub:"Mỗi trận đấu là một cơ hội để ghi điểm.",all:"Tất cả · 15",knowledge:"Kiến thức",challenge:"Thử thách",clubs:"CLB & giải đấu",leaderTitle:"🏆 Bảng thành tích",leaderSub:"Điểm được lưu trên trình duyệt hiện tại.",leaderNote:"Bản GitHub Pages dùng lưu trữ cục bộ (localStorage), không đồng bộ điểm giữa các thiết bị.",profileTitle:"⚙️ Hồ sơ người chơi",profileSub:"Đặt tên để bảng thành tích hiển thị đúng phong cách của bạn.",nameLabel:"Tên người chơi",save:"Lưu",privacy:"Không cần đăng ký tài khoản. Dữ liệu điểm và tên chỉ lưu trên trình duyệt của em.",footerText:"— Học bóng đá bằng cách chơi.",play:"CHƠI NGAY",points:"điểm",question:"CÂU",of:"/",next:"Câu tiếp theo →",finish:"Xem kết quả",correct:"Chính xác!",wrong:"Chưa đúng!",hint:"Chọn đáp án mà em cho là đúng.",time:"Thử thách kiến thức",result:"Kết quả trận đấu",again:"Chơi lại",back:"Về danh sách",nameSaved:"Đã lưu tên người chơi!",noScores:"Chưa có điểm nào. Chọn một mini game để bắt đầu nhé!",resultLine:"Em đã hoàn thành thử thách.",best:"Kỷ lục mới!",already:"Lưu ý: đây là bản demo chạy trên trình duyệt.",true:"Đúng",false:"Sai",penaltyHint:"Nhấn trực tiếp vào khung thành để ra chân sút bóng!",penaltyGoal:"VÀO!!! Cú sút tuyệt đẹp!",penaltySave:"RẤT TIẾC! Thủ môn cản phá thành công.",marketHint:"Nối từng cầu thủ với CLB sở hữu tương ứng.",oddHint:"Chọn phương án KHÔNG cùng nhóm.",dailyHint:"Thử thách hôm nay: trả lời đúng càng nhiều càng tốt."},
+en:{eyebrow:"THE ULTIMATE FOOTBALL QUIZ ARENA",heroTitle:'YOUR FOOTBALL<br><em>UNIVERSE.</em>',heroDesc:"Test your football knowledge, challenge your instincts and conquer 15 mini games, from legendary players to modern stadiums.",start:"⚡ Play now",explore:"Explore mini games ↓",statGames:"MINI GAMES",statPlayed:"GAMES PLAYED",statBest:"PERSONAL BEST",statLang:"BILINGUAL",gamesTitle:"Choose your challenge",gamesSub:"Every match is a chance to score.",all:"All games · 15",knowledge:"Knowledge",challenge:"Challenges",clubs:"Clubs & leagues",leaderTitle:"🏆 Leaderboard",leaderSub:"Scores are saved in this browser.",leaderNote:"The GitHub Pages version uses localStorage; scores are not shared across devices.",profileTitle:"⚙️ Player profile",profileSub:"Choose a name for your local leaderboard.",nameLabel:"Player name",save:"Save",privacy:"No account required. Your name and scores stay in this browser.",footerText:"— Learn football by playing.",play:"PLAY NOW",points:"pts",question:"QUESTION",of:"/",next:"Next question →",finish:"View results",correct:"Correct!",wrong:"Not quite!",hint:"Choose the answer you think is correct.",time:"Knowledge challenge",result:"Match results",again:"Play again",back:"Back to games",nameSaved:"Player name saved!",noScores:"No scores yet. Choose a mini game to get started!",resultLine:"You completed the challenge.",best:"New personal best!",already:"Note: this is a browser-based demo.",true:"True",false:"False",penaltyHint:"Click directly on the goal to shoot!",penaltyGoal:"GOAL!!! What a powerful strike!",penaltySave:"SAVED! The goalkeeper blocked it.",marketHint:"Match each player to their respective club.",oddHint:"Pick the option that does NOT belong.",dailyHint:"Daily challenge: answer as many as you can."}
 };
 const games=[
 {id:"quiz",icon:"🧠",title:{vi:"Bậc thầy bóng đá",en:"Football Master"},desc:{vi:"Trắc nghiệm kiến thức tổng hợp.",en:"Mixed football trivia."},cat:"knowledge",tag:{vi:"Kiến thức",en:"Trivia"},kind:"quiz"},
@@ -176,12 +202,12 @@ speed:[
 ["VAR hỗ trợ trọng tài bằng cách nào?","Xem lại video tình huống","Đo nhịp tim","Đếm khán giả","Thay trọng tài chính",0]
 ],
 transfers:[
-["Lionel Messi gia nhập Inter Miami năm 2023 sau khi rời đội nào?","Paris Saint-Germain","Barcelona","Manchester City","Juventus",0],
-["Cristiano Ronaldo gia nhập Al Nassr vào cuối năm 2022 sau khi rời đội nào?","Manchester United","Real Madrid","Juventus","Sporting CP",0],
-["Neymar gia nhập PSG từ Barcelona vào năm nào?","2017","2019","2015","2021",0],
-["Jude Bellingham gia nhập Real Madrid từ CLB nào năm 2023?","Borussia Dortmund","Bayern Munich","Chelsea","Ajax",0],
-["Erling Haaland gia nhập Manchester City từ CLB nào năm 2022?","Borussia Dortmund","Liverpool","RB Leipzig","PSG",0],
-["Harry Kane gia nhập Bayern Munich từ CLB nào năm 2023?","Tottenham Hotspur","Arsenal","Chelsea","Everton",0]
+  {player: "Lionel Messi", club: "Inter Miami"},
+  {player: "Cristiano Ronaldo", club: "Al Nassr"},
+  {player: "Jude Bellingham", club: "Real Madrid"},
+  {player: "Erling Haaland", club: "Manchester City"},
+  {player: "Harry Kane", club: "Bayern Munich"},
+  {player: "Kylian Mbappé", club: "Real Madrid"}
 ],
 tactics:[
 ["Sơ đồ 4-3-3 có bao nhiêu hậu vệ theo cách gọi thông thường?","4","3","5","2",0],
@@ -210,9 +236,11 @@ odd:[
 ["Chọn câu lạc bộ của Italy.","Juventus","Arsenal","Ajax","Benfica",0]
 ]
 };
-const TRANSFER_Q=Q.transfers;
+
 let lang=localStorage.getItem("fv_lang")||"vi", player=localStorage.getItem("fv_player")||"Player", history=JSON.parse(localStorage.getItem("fv_history")||"[]"), played=Number(localStorage.getItem("fv_played")||0), best=Number(localStorage.getItem("fv_best")||0);
-let currentGame=null, questions=[], qIndex=0, score=0, locked=false, penaltyAttempts=0;
+let currentGame=null, questions=[], qIndex=0, score=0, locked=false, penaltyAttempts=0, streak=0, timerInterval=null;
+let transferSelectedPlayer=null, transferSelectedClub=null, transferMatches={};
+
 const $=s=>document.querySelector(s);
 function t(key){return I18N[lang][key]||key}
 function tx(obj){return obj[lang]||obj.vi||obj}
@@ -224,26 +252,235 @@ function renderLeaderboard(){const el=$("#leaderboard");if(!history.length){el.i
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function shuffle(a){let b=[...a];for(let i=b.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
 function normalize(raw,kind){let q=raw.slice();if(kind==="truefalse"){return {question:q[0],answers:lang==="vi"?["Đúng","Sai"]:["True","False"],correct:q[3]??0,hint:""}}return {question:q[0],answers:q.slice(1,5),correct:q[5]??0}}
-function startGame(id){currentGame=games.find(g=>g.id===id);score=0;qIndex=0;locked=false;penaltyAttempts=0;
+
+function startGame(id){
+ clearInterval(timerInterval);
+ currentGame=games.find(g=>g.id===id);score=0;qIndex=0;locked=false;penaltyAttempts=0;streak=0;
  if(id==="penalty"){openModal();renderPenalty();return}
+ if(id==="transfers"){openModal();renderTransfers();return}
  let source=Q[id]||Q.quiz;
  questions=shuffle(source).slice(0,id==="speed"||id==="daily"?10:6).map(raw=>normalize(raw,id));
  openModal();renderQuestion();
 }
+
 function openModal(){$("#gameModal").classList.add("open");document.body.style.overflow="hidden";$("#modalIcon").textContent=currentGame.icon;$("#modalGameTitle").textContent=tx(currentGame.title);$("#modalCategory").textContent=tx(currentGame.tag)}
-function closeModal(){$("#gameModal").classList.remove("open");document.body.style.overflow=""}
-function renderQuestion(){locked=false;const q=questions[qIndex];if(!q){finishGame();return}
- const body=$("#gameBody");const trueFalse=currentGame.kind==="truefalse"||currentGame.kind==="transfers";
- body.innerHTML=`<div class="game-meta"><span>${t("question")} ${qIndex+1} ${t("of")} ${questions.length}</span><span>${score} ${t("points")}</span></div><div class="progress"><span style="width:${qIndex/questions.length*100}%"></span></div><h3 class="question">${esc(q.question)}</h3><p class="question-hint">${t("hint")}</p><div class="answers">${q.answers.map((a,i)=>`<button class="answer" data-answer="${i}">${String.fromCharCode(65+i)}. ${esc(a)}</button>`).join("")}</div><div class="feedback" id="feedback" aria-live="polite"></div><div class="game-controls"><span style="font-size:12px;color:var(--muted)">⚡ +100 ${t("points")}</span><button class="primary-btn" id="nextQ" disabled>${qIndex===questions.length-1?t("finish"):t("next")}</button></div>`;
+function closeModal(){clearInterval(timerInterval);$("#gameModal").classList.remove("open");document.body.style.overflow=""}
+
+/* --- QUESTION RENDERER (QUIZ, SPEED, TACTICS, ETC) --- */
+function renderQuestion(){
+ clearInterval(timerInterval);
+ locked=false;
+ const q=questions[qIndex];if(!q){finishGame();return}
+ const body=$("#gameBody");
+ 
+ let speedTimerHTML = currentGame.id === "speed" ? `<div class="timer-bar" id="timerBar"></div>` : "";
+ let tacticsPitchHTML = currentGame.id === "tactics" ? `
+ <div class="tactical-pitch">
+   <div class="tactical-row"><div class="tactical-node">FW</div><div class="tactical-node">FW</div></div>
+   <div class="tactical-row"><div class="tactical-node">MF</div><div class="tactical-node">MF</div></div>
+   <div class="tactical-row"><div class="tactical-node">DF</div><div class="tactical-node">DF</div></div>
+   <div class="tactical-row"><div class="tactical-node active">GK</div></div>
+ </div>` : "";
+
+ body.innerHTML=`
+ ${speedTimerHTML}
+ <div class="game-meta">
+   <span>${t("question")} ${qIndex+1} ${t("of")} ${questions.length} ${streak > 1 ? `<span class="streak-badge">🔥 Streak x${streak}</span>` : ''}</span>
+   <span>${score} ${t("points")}</span>
+ </div>
+ <div class="progress"><span style="width:${qIndex/questions.length*100}%"></span></div>
+ ${tacticsPitchHTML}
+ <h3 class="question">${esc(q.question)}</h3>
+ <p class="question-hint">${t("hint")}</p>
+ <div class="answers">${q.answers.map((a,i)=>`<button class="answer" data-answer="${i}">${String.fromCharCode(65+i)}.${esc(a)}</button>`).join("")}</div>
+ <div class="feedback" id="feedback" aria-live="polite"></div>
+ <div class="game-controls">
+   <span style="font-size:12px;color:var(--muted)">⚡ +100 ${t("points")}</span>
+   <button class="primary-btn" id="nextQ" disabled>${qIndex===questions.length-1?t("finish"):t("next")}</button>
+ </div>`;
+
  body.querySelectorAll("[data-answer]").forEach(b=>b.addEventListener("click",()=>chooseAnswer(Number(b.dataset.answer))));
  $("#nextQ").addEventListener("click",()=>{qIndex++;renderQuestion()});
+
+ if(currentGame.id === "speed"){
+   let timeLeft = 100;
+   const timerBar = $("#timerBar");
+   timerInterval = setInterval(()=>{
+     timeLeft -= 1;
+     if(timerBar) timerBar.style.width = timeLeft + "%";
+     if(timeLeft <= 0){
+       clearInterval(timerInterval);
+       chooseAnswer(-1); // Timeout -> auto wrong
+     }
+   }, 150);
+ }
 }
-function chooseAnswer(i){if(locked)return;locked=true;const q=questions[qIndex],buttons=[...$("#gameBody").querySelectorAll("[data-answer]")];buttons.forEach(b=>b.disabled=true);buttons[q.correct].classList.add("correct");const fb=$("#feedback");if(i===q.correct){score+=100;fb.textContent=t("correct");fb.className="feedback good"}else{buttons[i].classList.add("wrong");fb.textContent=t("wrong");fb.className="feedback bad"}$("#gameBody .game-meta span:last-child").textContent=score+" "+t("points");$("#nextQ").disabled=false}
-function renderPenalty(){const body=$("#gameBody");body.innerHTML=`<div class="game-meta"><span>${lang==="vi"?"LƯỢT SÚT":"SHOTS"} ${penaltyAttempts+1}/5</span><span>${score} ${t("points")}</span></div><div class="progress"><span style="width:${penaltyAttempts/5*100}%"></span></div><h3 class="question">${lang==="vi"?"Đặt bóng lên chấm phạt đền. Em sẽ sút vào góc nào?":"Place the ball on the spot. Which corner will you shoot for?"}</h3><p class="question-hint">${t("penaltyHint")}</p><div class="answers"><button class="answer" data-shot="0">↖ ${lang==="vi"?"Góc cao trái":"Top left"}</button><button class="answer" data-shot="1">↗ ${lang==="vi"?"Góc cao phải":"Top right"}</button><button class="answer" data-shot="2">↙ ${lang==="vi"?"Góc thấp trái":"Bottom left"}</button><button class="answer" data-shot="3">↘ ${lang==="vi"?"Góc thấp phải":"Bottom right"}</button></div><div class="feedback" id="feedback"></div><div class="game-controls"><span style="font-size:12px;color:var(--muted)">${lang==="vi"?"Mỗi bàn thắng":"Each goal"} +100 ${t("points")}</span><button class="primary-btn" id="nextShot" disabled>${penaltyAttempts===4?t("finish"):t("next")}</button></div>`;
- body.querySelectorAll("[data-shot]").forEach(b=>b.addEventListener("click",()=>{if(locked)return;locked=true;const keeper=Math.floor(Math.random()*4),goal=Number(b.dataset.shot)!==keeper;body.querySelectorAll("[data-shot]").forEach(x=>x.disabled=true);const fb=$("#feedback");if(goal){score+=100;b.classList.add("correct");fb.textContent=t("penaltyGoal");fb.className="feedback good"}else{b.classList.add("wrong");fb.textContent=t("penaltySave");fb.className="feedback bad"}$("#gameBody .game-meta span:last-child").textContent=score+" "+t("points");$("#nextShot").disabled=false}));
- $("#nextShot").addEventListener("click",()=>{penaltyAttempts++;if(penaltyAttempts>=5)finishGame();else{locked=false;renderPenalty()}});
+
+function chooseAnswer(i){
+ if(locked)return;locked=true;
+ clearInterval(timerInterval);
+ const q=questions[qIndex],buttons=[...$("#gameBody").querySelectorAll("[data-answer]")];
+ buttons.forEach(b=>b.disabled=true);
+ 
+ const fb=$("#feedback");
+ if(i === q.correct){
+   streak++;
+   let addedPoints = 100 + (streak > 1 ? streak * 20 : 0);
+   score += addedPoints;
+   if(buttons[q.correct]) buttons[q.correct].classList.add("correct");
+   fb.textContent = `${t("correct")} (+${addedPoints})`;
+   fb.className = "feedback good";
+ } else {
+   streak = 0;
+   if(i >= 0 && buttons[i]) buttons[i].classList.add("wrong");
+   if(buttons[q.correct]) buttons[q.correct].classList.add("correct");
+   fb.textContent = i === -1 ? (lang==="vi"?"Hết giờ!":"Time's up!") : t("wrong");
+   fb.className = "feedback bad";
+ }
+ $("#gameBody .game-meta span:last-child").textContent = score + " " + t("points");
+ $("#nextQ").disabled = false;
 }
-function finishGame(){played++;const isBest=score>best;if(isBest)best=score;history.push({name:player,game:tx(currentGame.title),score,date:new Date().toISOString()});history=history.slice(-60);save();renderStats();renderLeaderboard();const body=$("#gameBody");body.innerHTML=`<div class="result"><div class="result-emoji">${score>=400?"🏆":score>=200?"⚽":"💪"}</div><p style="margin:0">${t("result")}</p><h2>${tx(currentGame.title)}</h2><div class="result-score">${score}</div><p>${t("points")} · ${t("resultLine")}</p>${isBest?`<p style="color:var(--green);font-weight:900">✨ ${t("best")}</p>`:""}<p style="font-size:12px">${t("already")}</p><div class="result-actions"><button class="primary-btn" id="playAgain">${t("again")}</button><button class="secondary-btn" id="backGames">${t("back")}</button></div></div>`;$("#playAgain").addEventListener("click",()=>startGame(currentGame.id));$("#backGames").addEventListener("click",closeModal)}
+
+/* --- PENALTY GAMEPLAY ENHANCED --- */
+function renderPenalty(){
+ const body=$("#gameBody");
+ body.innerHTML=`
+ <div class="game-meta"><span>${lang==="vi"?"LƯỢT SÚT":"SHOTS"} ${penaltyAttempts+1}/5</span><span>${score} ${t("points")}</span></div>
+ <div class="progress"><span style="width:${penaltyAttempts/5*100}%"></span></div>
+ <div class="penalty-stage">
+   <div class="penalty-goal"></div>
+   <div class="penalty-keeper" id="pKeeper">🧍‍♂️</div>
+   <div class="penalty-ball" id="pBall">⚽</div>
+   <div class="shot-target-grid">
+     <button class="shot-target-btn" data-shot="0" aria-label="Top Left"></button>
+     <button class="shot-target-btn" data-shot="1" aria-label="Top Right"></button>
+     <button class="shot-target-btn" data-shot="2" aria-label="Bottom Left"></button>
+     <button class="shot-target-btn" data-shot="3" aria-label="Bottom Right"></button>
+   </div>
+ </div>
+ <p class="question-hint" style="text-align:center">${t("penaltyHint")}</p>
+ <div class="feedback" id="feedback" style="text-align:center"></div>
+ <div class="game-controls">
+   <span style="font-size:12px;color:var(--muted)">${lang==="vi"?"Mỗi bàn thắng":"Each goal"} +100 ${t("points")}</span>
+   <button class="primary-btn" id="nextShot" disabled>${penaltyAttempts===4?t("finish"):t("next")}</button>
+ </div>`;
+
+ body.querySelectorAll("[data-shot]").forEach(b=>b.addEventListener("click",()=>{
+   if(locked)return;locked=true;
+   const shotPos = Number(b.dataset.shot);
+   const keeperPos = Math.floor(Math.random()*4);
+   const goal = shotPos !== keeperPos;
+
+   const keeperEl = $("#pKeeper");
+   const ballEl = $("#pBall");
+   const posMap = [
+     {k:'top: 30px; left: 25%;', b:'bottom: 120px; left: 25%;'}, // Top Left
+     {k:'top: 30px; left: 65%;', b:'bottom: 120px; left: 65%;'}, // Top Right
+     {k:'top: 60px; left: 25%;', b:'bottom: 80px; left: 25%;'},  // Bottom Left
+     {k:'top: 60px; left: 65%;', b:'bottom: 80px; left: 65%;'}   // Bottom Right
+   ];
+
+   keeperEl.style = posMap[keeperPos].k;
+   ballEl.style = posMap[shotPos].b;
+
+   const fb=$("#feedback");
+   setTimeout(()=>{
+     if(goal){
+       score+=100;
+       fb.textContent=t("penaltyGoal");
+       fb.className="feedback good";
+     }else{
+       fb.textContent=t("penaltySave");
+       fb.className="feedback bad";
+     }
+     $("#gameBody .game-meta span:last-child").textContent=score+" "+t("points");
+     $("#nextShot").disabled=false;
+   }, 400);
+ }));
+
+ $("#nextShot").addEventListener("click",()=>{
+   penaltyAttempts++;
+   if(penaltyAttempts>=5) finishGame();
+   else { locked=false; renderPenalty(); }
+ });
+}
+
+/* --- TRANSFERS MATCHING GAMEPLAY --- */
+function renderTransfers(){
+ const body=$("#gameBody");
+ const items = Q.transfers;
+ const players = shuffle(items.map(x=>x.player));
+ const clubs = shuffle(items.map(x=>x.club));
+ transferSelectedPlayer = null;
+ transferSelectedClub = null;
+
+ body.innerHTML=`
+ <div class="game-meta"><span>${tx(currentGame.title)}</span><span>${score} ${t("points")}</span></div>
+ <p class="question-hint">${t("marketHint")}</p>
+ <div class="transfer-container">
+   <div id="playerCol">${players.map(p=>`<div class="transfer-card" data-p="${p}">${p}</div>`).join('')}</div>
+   <div id="clubCol">${clubs.map(c=>`<div class="transfer-card" data-c="${c}">${c}</div>`).join('')}</div>
+ </div>
+ <div class="feedback" id="feedback"></div>
+ <div class="game-controls">
+   <span style="font-size:12px;color:var(--muted)">+100 pts / match</span>
+   <button class="primary-btn" id="finishMatchBtn">${t("finish")}</button>
+ </div>`;
+
+ const playerCards = body.querySelectorAll("[data-p]");
+ const clubCards = body.querySelectorAll("[data-c]");
+
+ playerCards.forEach(c => c.addEventListener("click", ()=>{
+   if(c.classList.contains("matched")) return;
+   playerCards.forEach(x => x.classList.remove("selected"));
+   c.classList.add("selected");
+   transferSelectedPlayer = c.dataset.p;
+   checkTransferPair();
+ }));
+
+ clubCards.forEach(c => c.addEventListener("click", ()=>{
+   if(c.classList.contains("matched")) return;
+   clubCards.forEach(x => x.classList.remove("selected"));
+   c.classList.add("selected");
+   transferSelectedClub = c.dataset.c;
+   checkTransferPair();
+ }));
+
+ $("#finishMatchBtn").addEventListener("click", finishGame);
+}
+
+function checkTransferPair(){
+ if(!transferSelectedPlayer || !transferSelectedClub) return;
+ const match = Q.transfers.find(x => x.player === transferSelectedPlayer && x.club === transferSelectedClub);
+ const fb = $("#feedback");
+ if(match){
+   score += 100;
+   fb.textContent = t("correct");
+   fb.className = "feedback good";
+   $(`[data-p="${transferSelectedPlayer}"]`).classList.add("matched");
+   $(`[data-c="${transferSelectedClub}"]`).classList.add("matched");
+ } else {
+   fb.textContent = t("wrong");
+   fb.className = "feedback bad";
+ }
+ $(`[data-p="${transferSelectedPlayer}"]`).classList.remove("selected");
+ $(`[data-c="${transferSelectedClub}"]`).classList.remove("selected");
+ transferSelectedPlayer = null;
+ transferSelectedClub = null;
+ $("#gameBody .game-meta span:last-child").textContent = score + " " + t("points");
+}
+
+/* --- GAME OVER & RESULT --- */
+function finishGame(){
+ played++;const isBest=score>best;if(isBest)best=score;
+ history.push({name:player,game:tx(currentGame.title),score,date:new Date().toISOString()});
+ history=history.slice(-60);save();renderStats();renderLeaderboard();
+ const body=$("#gameBody");
+ body.innerHTML=`<div class="result"><div class="result-emoji">${score>=400?"🏆":score>=200?"⚽":"💪"}</div><p style="margin:0">${t("result")}</p><h2>${tx(currentGame.title)}</h2><div class="result-score">${score}</div><p>${t("points")} · ${t("resultLine")}</p>${isBest?`<p style="color:var(--green);font-weight:900">✨ ${t("best")}</p>`:""}<p style="font-size:12px">${t("already")}</p><div class="result-actions"><button class="primary-btn" id="playAgain">${t("again")}</button><button class="secondary-btn" id="backGames">${t("back")}</button></div></div>`;
+ $("#playAgain").addEventListener("click",()=>startGame(currentGame.id));
+ $("#backGames").addEventListener("click",closeModal);
+}
+
 $("#langBtn").addEventListener("click",()=>{lang=lang==="vi"?"en":"vi";save();setLang()});
 $("#startBtn").addEventListener("click",()=>startGame("quiz"));$("#scrollGames").addEventListener("click",()=>$("#gamesSection").scrollIntoView({behavior:"smooth"}));
 $("#filters").querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{$("#filters").querySelectorAll("button").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderGames(b.dataset.filter)}));
